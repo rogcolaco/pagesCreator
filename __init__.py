@@ -21,8 +21,8 @@ import time
 ## Em especial 'login' e 'senha'
 ## Posibilidade de instalação do template junto da página (Ver xpath)
 
-# ./venv/bin/python pagesGenerator.py ou
-# ./venv/Sripts/python pagesGenerator.py
+# ./venv/bin/python __init__.py ou
+# ./venv/Sripts/python __init__.py
 
 def main():
     print('\nBot Start ....')
