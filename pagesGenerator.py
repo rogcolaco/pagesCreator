@@ -7,12 +7,22 @@ import const
 import createObject
 import time
 
-# Ver configurações do create object
+#criar ambiente virutal (venv) - apenas no primeiro "clone"
+# python3 -m venv venv
 
+# ativar a variável de ambiente
+# ./venv/bin/activate ou
+# ./venv/Sripts/activate
 # pip install selenium
 # pip install tqdm
+# colocar uma cópia da engine junto da instalação global do python
 
-# ./venv/bin/python pagesGenerator.py
+# Ver configurações no arquivo const.py
+## Em especial 'login' e 'senha'
+## Posibilidade de instalação do template junto da página (Ver xpath)
+
+# ./venv/bin/python pagesGenerator.py ou
+# ./venv/Sripts/python pagesGenerator.py
 
 def main():
     print('\nBot Start ....')
@@ -53,11 +63,11 @@ def main():
         for name in tqdm(arrayFolders):
             createObject.createFolder(driver, name)
 
-    time.sleep(const.time_wait_long)
+    time.sleep(const.avg_time_wait*2)
 
     access.logoutProcess(driver)
 
-    time.sleep(const.time_wait_short)
+    time.sleep(const.avg_time_wait/2)
     driver.close()
 
     print('\nBot Finished ...')
