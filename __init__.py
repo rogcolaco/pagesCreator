@@ -12,14 +12,14 @@ import time
 
 # ativar a variável de ambiente
 # ./venv/bin/activate ou
-# ./venv/Sripts/activate
+# ./venv/Scripts/activate
 # pip install selenium
 # pip install tqdm
 # colocar uma cópia da engine junto da instalação global do python
 
 # Ver configurações no arquivo const.py
 ## Em especial 'login' e 'senha'
-## Posibilidade de instalação do template junto da página (Ver xpath)
+## Possibilidade de instalação do template junto da página (Ver xpath)
 
 # ./venv/bin/python __init__.py ou
 # ./venv/Sripts/python __init__.py
