@@ -1,11 +1,11 @@
-login='botselenium'
+login='botSelenium'
 password=''
 
-baseUrl = 'https://web06dev2.ufscar.br'
+baseUrl = 'https://web06dev6.ufscar.br'
 
-location='/equipe/corpo-docente'
+location='/extensao'
 
-avg_time_wait = 1.0
+avg_time_wait = 0.8
 
 hasTemplate = False
 

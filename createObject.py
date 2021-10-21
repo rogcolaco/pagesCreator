@@ -23,9 +23,15 @@ def save(driver):
    driver.find_element_by_xpath('//*[@id="form-buttons-save"]').click() 
 
 def publish(driver):
-    driver.find_element_by_xpath('//*[@id="plone-contentmenu-workflow"]/a/span[2]/span[3]').click()
-    time.sleep(const.avg_time_wait/2)
-    driver.find_element_by_xpath('//*[@id="workflow-transition-publish"]').click()
+    driver.get(baseUrl)
+    driver.find_element_by_xpath('//*[@id="contentview-folderContents"]/a').click()
+    time.sleep(const.avg_time_wait*1.5)
+    driver.find_element_by_xpath('//*[@id="selectAllInputCheckbox"]').click()
+    driver.find_element_by_xpath('//*[@id="btn-workflow"]').click()
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(const.avg_time_wait*0.5)
+    driver.find_element_by_xpath('//*[@id="popover-workflow"]/div[3]/form/fieldset/div[3]/label/input').click()
+    driver.find_element_by_xpath('//*[@id="popover-workflow"]/div[3]/button').click()
 
 def createPage(driver, pageName):
     driver.get(baseUrl)
@@ -38,10 +44,6 @@ def createPage(driver, pageName):
 
     #save
     save(driver)
-    time.sleep(const.avg_time_wait*1.5)
-
-    #publicar página
-    publish(driver)
 
 
 def createFolder(driver, folderName):
@@ -51,8 +53,4 @@ def createFolder(driver, folderName):
     inputName.send_keys(folderName)
     #save
     save(driver)
-    time.sleep(const.avg_time_wait*1.5)
-
-    #publicar página
-    publish(driver)
 

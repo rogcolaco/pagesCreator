@@ -27,27 +27,21 @@ import time
 def main():
     print('\nBot Start ....')
     arrayPages = [
-        'Análise e monitoramento de bioprocessos',
-        'Análise Microbiológica de Solo, Produtos e Processos Agrícolas e Industriais',
-        'Análises Tecnológicas de Produtos do Setor Sucroalcooleiro',
-        'Aproveitamento de resíduos agroindustriais para obtenção de biomoléculas',
-        'Bioenergy Hub',
-        'Boletim Informativo GEAgro',
-        'Cálculo da Cesta Básica do Município de Araras-SP',
-        'Continuando a Compartilhar Saberes: Desdobramentos e Perspectivas',
-        'Conversão de Unidades e Variáveis de Processos Industriais',
-        'Curso - Aguardente Bidestilada',
-        'Curso - Melado, Rapadura e Açúcar Mascavo',
-        'Empresa Jr Sustec Jr',
-        'Estudo técnico – agroindústria',
-        'Estudo técnico - setor de bebidas',
-        'Fronteira HUB',
-        'Grupo de Estudos em Probabilidade e Estatística (GEPE)',
+        'Apresentação'
     ]
 
     arrayFolders = [
-        
-    ]
+        'Educação, Música e Formação Humana',
+        'Ações e Reflexões em Educação e Educação Musical',
+        'Música Popular: História, Performance e Ensino',
+        'Educação Musical e Organizações Sociais de Cultura: Parceria entre a UFSCar e o Projeto Guri',
+        'Orquestra',
+        'Iniciação Musical ao Longo da Vida',
+        'Prática de Samba e Choro: Formação do Corpo Coletivo e o Aprendizado Musical na Roda',
+        'Projeto Big Band na UFSCar',
+        'Outras atividades',
+
+    ]   
 
     driver = webdriver.Firefox()
 
@@ -62,12 +56,15 @@ def main():
         print('\nStart Folder Generation ..')
         for name in tqdm(arrayFolders):
             createObject.createFolder(driver, name)
+        
+    #publicar itens
+    createObject.publish(driver)
 
-    time.sleep(const.avg_time_wait*2)
+    time.sleep(const.avg_time_wait*0.5)
 
     access.logoutProcess(driver)
 
-    time.sleep(const.avg_time_wait/2)
+    time.sleep(const.avg_time_wait*0.5)
     driver.close()
 
     print('\nBot Finished ...')
