@@ -5,19 +5,23 @@ import time
 baseUrl= const.baseUrl+const.location
 
 def addTemplate(driver):
+    #ver Xpath do template
     time.sleep(const.avg_time_wait*1.5)
     driver.find_element_by_xpath('//*[@id="mceu_20-open"]').click()
     time.sleep(const.avg_time_wait*1.5)
     driver.find_element_by_xpath('//*[@id="mceu_43"]').click()
-    time.sleep(const.avg_time_wait*1.5)
-    driver.find_element_by_xpath('//*[@id="mceu_48-open"]').click()
-    time.sleep(const.avg_time_wait*1.5)
-
-    #ver Xpath do template
-    driver.find_element_by_xpath(const.xPathTemplate).click()
-    time.sleep(const.avg_time_wait*1.5)
-    driver.find_element_by_xpath('//*[@id="mceu_52-button"]').click()
-    time.sleep(const.avg_time_wait*1.5)
+      
+    if(const.xPathTemplate == '//*[@id="mceu_56"]'):
+        time.sleep(const.avg_time_wait*0.4)
+        driver.find_element_by_xpath('//*[@id="mceu_52-button"]').click()
+    else:
+        time.sleep(const.avg_time_wait*1.5)
+        driver.find_element_by_xpath('//*[@id="mceu_48-open"]').click()
+        time.sleep(const.avg_time_wait*1.5)
+        driver.find_element_by_xpath(const.xPathTemplate).click()
+        time.sleep(const.avg_time_wait*1.5)
+        driver.find_element_by_xpath('//*[@id="mceu_52-button"]').click()
+    time.sleep(const.avg_time_wait*0.5)
 
 def save(driver):
    driver.find_element_by_xpath('//*[@id="form-buttons-save"]').click() 

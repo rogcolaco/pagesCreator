@@ -27,20 +27,26 @@ import time
 def main():
     print('\nBot Start ....')
     arrayPages = [
-        'Apresentação'
+	    'Prof. Dr. Adelcio Camilo Machado',
+        'Prof. Dr. Antônio Carlos Leme Junior',
+        'Prof. Dr. Daniel Marcondes Gohn',
+        'Profa. Dra. Daniela Dotto Machado',
+        'Prof. Dr. Eduardo Conegundes de Souza',
+        'Prof. Dr. Eduardo Nespoli',
+        'Prof. Dr. Fernando Stanzione Galizia',
+        'Prof. Dr. Fred Siqueira Cavalcante',
+        'Prof. Dr. Glauber Lúcio Alves Santiago',
+        'Profa. Dra. Isamara Alves Carvalho',
+        'Prof. Me. José Alessandro G. Silva',
+        'Profa. Dra. Juliana Marília Coli',
+        'Profa. Dra. Maria Carolina Leme Joly',
+        'Profa. Me. Natália Búrigo Severino',
+        'Profa. Dra. Renata Franco Severo Fantini',
+        'Profa. Dra. Thais dos Guimarães Alvim Nunes',
+        'Profa. Dra. Suzana Reck Miranda',
     ]
 
     arrayFolders = [
-        'Educação, Música e Formação Humana',
-        'Ações e Reflexões em Educação e Educação Musical',
-        'Música Popular: História, Performance e Ensino',
-        'Educação Musical e Organizações Sociais de Cultura: Parceria entre a UFSCar e o Projeto Guri',
-        'Orquestra',
-        'Iniciação Musical ao Longo da Vida',
-        'Prática de Samba e Choro: Formação do Corpo Coletivo e o Aprendizado Musical na Roda',
-        'Projeto Big Band na UFSCar',
-        'Outras atividades',
-
     ]   
 
     driver = webdriver.Firefox()

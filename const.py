@@ -3,11 +3,11 @@ password=''
 
 baseUrl = 'https://web06dev6.ufscar.br'
 
-location='/extensao'
+location='/o-curso/docentes'
 
 avg_time_wait = 0.8
 
-hasTemplate = False
+hasTemplate = True
 
 xPathTemplate = '//*[@id="mceu_56"]'
 
