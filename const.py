@@ -1,9 +1,9 @@
 login='botSelenium'
-password=''
+password='botSelenium'
 
 baseUrl = 'https://web06dev6.ufscar.br'
 
-location='/o-curso/docentes'
+location='/teste'
 
 avg_time_wait = 0.8
 

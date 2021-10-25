@@ -21,29 +21,19 @@ import time
 ## Em especial 'login' e 'senha'
 ## Possibilidade de instalação do template junto da página (Ver xpath)
 
+# Atalhos para rodar o bot 
 # ./venv/bin/python __init__.py ou
 # ./venv/Sripts/python __init__.py
 
 def main():
     print('\nBot Start ....')
+
     arrayPages = [
 	    'Prof. Dr. Adelcio Camilo Machado',
         'Prof. Dr. Antônio Carlos Leme Junior',
         'Prof. Dr. Daniel Marcondes Gohn',
         'Profa. Dra. Daniela Dotto Machado',
-        'Prof. Dr. Eduardo Conegundes de Souza',
-        'Prof. Dr. Eduardo Nespoli',
-        'Prof. Dr. Fernando Stanzione Galizia',
-        'Prof. Dr. Fred Siqueira Cavalcante',
-        'Prof. Dr. Glauber Lúcio Alves Santiago',
-        'Profa. Dra. Isamara Alves Carvalho',
-        'Prof. Me. José Alessandro G. Silva',
-        'Profa. Dra. Juliana Marília Coli',
-        'Profa. Dra. Maria Carolina Leme Joly',
-        'Profa. Me. Natália Búrigo Severino',
-        'Profa. Dra. Renata Franco Severo Fantini',
-        'Profa. Dra. Thais dos Guimarães Alvim Nunes',
-        'Profa. Dra. Suzana Reck Miranda',
+        
     ]
 
     arrayFolders = [
@@ -66,12 +56,16 @@ def main():
     #publicar itens
     createObject.publish(driver)
 
-    time.sleep(const.avg_time_wait*0.5)
-
-    access.logoutProcess(driver)
-
-    time.sleep(const.avg_time_wait*0.5)
-    driver.close()
+    if (len(arrayFolders)>15 or len(arrayPages)>15):
+        time.sleep(const.avg_time_wait*2.0)
+        access.logoutProcess(driver)
+        time.sleep(const.avg_time_wait*2.0)
+        driver.close()
+    else:
+        time.sleep(const.avg_time_wait*0.5)
+        access.logoutProcess(driver)
+        time.sleep(const.avg_time_wait*0.5)
+        driver.close()
 
     print('\nBot Finished ...')
 
