@@ -56,7 +56,7 @@ def createPage(driver, pageName):
     driver.get(baseUrl)
     driver.get(baseUrl+'/++add++Document')
     inputName = driver.find_element_by_xpath('//*[@id="form-widgets-IDublinCore-title"]')
-    inputName.send_keys(pageName)
+    inputName.send_keys(pageName.strip())
 
     if(const.hasTemplate):
         addTemplate(driver)
@@ -69,7 +69,7 @@ def createFolder(driver, folderName):
     driver.get(baseUrl)
     driver.get(baseUrl+'/++add++Folder')
     inputName = driver.find_element_by_xpath('//*[@id="form-widgets-IDublinCore-title"]')
-    inputName.send_keys(folderName)
+    inputName.send_keys(folderName.strip())
     #save
     save(driver)
 

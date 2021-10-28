@@ -1,13 +1,13 @@
-login='botSelenium'
+login='botSeleniumRogerio'
 password='botSelenium'
 
-baseUrl = 'https://web06dev6.ufscar.br'
+baseUrl = 'https://web06dev4.ufscar.br'
 
-location='/teste'
+location='/pt-br/alunos'
 
 avg_time_wait = 0.8
 
-hasTemplate = True
+hasTemplate = False
 
 xPathTemplate = '//*[@id="mceu_56"]'
 

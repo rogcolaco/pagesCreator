@@ -29,11 +29,19 @@ def main():
     print('\nBot Start ....')
 
     arrayPages = [
-	    'Prof. Dr. Adelcio Camilo Machado',
-        'Prof. Dr. Antônio Carlos Leme Junior',
-        'Prof. Dr. Daniel Marcondes Gohn',
-        'Profa. Dra. Daniela Dotto Machado',
-        
+	    'Disciplinas  ',
+        'Cronograma',
+        'Matrícula ',
+        'Bolsas ',
+        'Carteirinha estudantil',
+        'Banco de Dissertações e Teses ',
+        'Qualificações e defesas',
+        'CEP- Comitê de Ética em Pesquisa  ',
+        'Alunos Estrangeiros',
+        ' Co-orientação',
+        ' Reconhecimento de créditos',
+        ' Capacitação Docente ',
+        ' Solicitação de auxílio financeiro para apresentação de trabalho em congresso',
     ]
 
     arrayFolders = [
