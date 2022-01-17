@@ -1,9 +1,6 @@
-login='botSeleniumRogerio'
-password='botSelenium'
-
 baseUrl = 'https://web06dev4.ufscar.br'
 
-location='/pt-br/alunos'
+location='/pt-br/programa/linhas-de-pesquisa-e-docentes'
 
 avg_time_wait = 0.8
 

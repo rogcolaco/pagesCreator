@@ -23,25 +23,15 @@ import time
 
 # Atalhos para rodar o bot 
 # ./venv/bin/python __init__.py ou
-# ./venv/Sripts/python __init__.py
+# ./venv/Scripts/python __init__.py
 
 def main():
     print('\nBot Start ....')
 
     arrayPages = [
-	    'Disciplinas  ',
-        'Cronograma',
-        'Matrícula ',
-        'Bolsas ',
-        'Carteirinha estudantil',
-        'Banco de Dissertações e Teses ',
-        'Qualificações e defesas',
-        'CEP- Comitê de Ética em Pesquisa  ',
-        'Alunos Estrangeiros',
-        ' Co-orientação',
-        ' Reconhecimento de créditos',
-        ' Capacitação Docente ',
-        ' Solicitação de auxílio financeiro para apresentação de trabalho em congresso',
+	    'Linhas de Pesquisa e Docentes',
+        'Adriana Sanches Garcia de Araujo',
+        'Ana Beatriz de Oliveira',
     ]
 
     arrayFolders = [

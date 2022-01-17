@@ -1,4 +1,5 @@
 import const
+import venv
 
 def loginProcess(driver):
     driver.get(const.baseUrl+'/login')
@@ -8,8 +9,8 @@ def loginProcess(driver):
 
     login.clear()
     password.clear()
-    login.send_keys(const.login)
-    password.send_keys(const.password)
+    login.send_keys(venv.login)
+    password.send_keys(venv.password)
 
     driver.find_element_by_xpath('//*[@id="buttons-login"]').click()
 
