@@ -1,11 +1,14 @@
+from msilib.schema import CreateFolder
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from tqdm import tqdm
 
 import accessProcess as access
 import const
-import createObject
+import createFolder
+import createPage
 import time
+import util
 
 #criar ambiente virutal (venv) - apenas no primeiro "clone"
 # python3 -m venv venv
@@ -44,15 +47,15 @@ def main():
     if len(arrayPages)>0:
         print('\nStart Pages Generation ..')
         for name in tqdm(arrayPages):
-            createObject.createPage(driver, name)
+            createPage.createPage(driver, name)
 
     if len(arrayFolders)>0:
         print('\nStart Folder Generation ..')
         for name in tqdm(arrayFolders):
-            createObject.createFolder(driver, name)
+            createFolder.createFolder(driver, name)
         
     #publicar itens
-    createObject.publish(driver)
+    util.publish(driver)
 
     if (len(arrayFolders)>15 or len(arrayPages)>15):
         time.sleep(const.avg_time_wait*2.0)
