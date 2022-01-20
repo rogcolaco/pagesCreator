@@ -18,6 +18,7 @@ import util
 # ./venv/Scripts/activate
 # pip install selenium
 # pip install tqdm
+# pip install Unidecode
 # colocar uma cópia da engine junto da instalação global do python
 
 # Ver configurações no arquivo const.py
@@ -32,9 +33,9 @@ def main():
     print('\nBot Start ....')
 
     arrayPages = [
-	    'Linhas de Pesquisa e Docentes',
-        'Adriana Sanches Garcia de Araujo',
-        'Ana Beatriz de Oliveira',
+        'Subprojetos',
+        'Escolas',
+        'Livros e Artigos',
     ]
 
     arrayFolders = [
@@ -42,15 +43,20 @@ def main():
 
     driver = webdriver.Firefox()
 
+
     access.loginProcess(driver)
 
     if len(arrayPages)>0:
         print('\nStart Pages Generation ..')
+        if len(const.location)==0:
+            util.setAllPrivate(driver)
         for name in tqdm(arrayPages):
             createPage.createPage(driver, name)
 
     if len(arrayFolders)>0:
         print('\nStart Folder Generation ..')
+        if len(const.location)==0:
+            util.setAllPrivate(driver)
         for name in tqdm(arrayFolders):
             createFolder.createFolder(driver, name)
         

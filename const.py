@@ -1,6 +1,6 @@
-baseUrl = 'https://web06dev4.ufscar.br'
+baseUrl = 'https://web06dev9.ufscar.br'
 
-location='/pt-br/teste/teste'
+location='/materiais-e-producoes'
 
 avg_time_wait = 0.8
 
