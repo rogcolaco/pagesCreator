@@ -1,4 +1,9 @@
+from turtle import delay
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 import const
 import time
@@ -16,6 +21,14 @@ def scrollDown(driver):
 
 def scrollUp(driver):
     driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME)
+
+def waitLoad(driver, xpath):
+    try:
+        isLoad = WebDriverWait(driver, const.delay).until(EC.presence_of_element_located((By.XPATH, xpath)))
+        if (isLoad):
+            return True
+    except TimeoutException:
+        return False
 
 def save(driver):
     scrollDown(driver)
@@ -35,12 +48,15 @@ def publish(driver):
     time.sleep(const.avg_time_wait)
     driver.find_element_by_xpath('//*[@id="selectAllInputCheckbox"]').click()
     driver.find_element_by_xpath('//*[@id="btn-workflow"]').click()
-    scrollDown(driver)
-    time.sleep(const.avg_time_wait*0.5)
-    driver.find_element_by_xpath('//*[@id="popover-workflow"]/div[3]/form/fieldset/div[3]/label/input').click()
+    #scrollDown(driver)
+    #time.sleep(const.avg_time_wait*0.5)
+    resp = waitLoad(driver, '//*[@id="popover-workflow"]/div[3]/form/fieldset/div[3]/label/input')
+    driver.find_element_by_xpath('//*[@id="popover-workflow"]/div[3]/form/fieldset/div[3]/label/input').click() if resp else print('Element not found')
+    #driver.find_element_by_xpath('//*[@id="popover-workflow"]/div[3]/form/fieldset/div[3]/label/input').click()
     driver.find_element_by_xpath('//*[@id="popover-workflow"]/div[3]/button').send_keys(Keys.NULL)
     driver.find_element_by_xpath('//*[@id="popover-workflow"]/div[3]/button').click()
-    time.sleep(const.avg_time_wait*2)
+    resp = waitLoad(driver, '//*[@id="popover-workflow"]/div[3]/button')
+    driver.get(baseUrl) if resp else print('Element not found')
 
 def setAllPrivate(driver):
     driver.get(baseUrl)
