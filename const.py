@@ -1,6 +1,6 @@
-baseUrl = 'https://web06dev9.ufscar.br'
+baseUrl = 'https://web06dev4.ufscar.br/pt-br'
 
-location='/materiais-e-producoes'
+location='/programa/conselho-de-pos-graduacao-eq'
 
 avg_time_wait = 0.8
 

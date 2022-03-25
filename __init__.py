@@ -1,6 +1,4 @@
-from msilib.schema import CreateFolder
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from tqdm import tqdm
 
 import accessProcess as access
@@ -8,7 +6,6 @@ import const
 import createFolder
 import createPage
 import time
-import util
 
 #criar ambiente virutal (venv) - apenas no primeiro "clone"
 # python3 -m venv venv
@@ -33,9 +30,8 @@ def main():
     print('\nBot Start ....')
 
     arrayPages = [
-        'Subprojetos',
-        'Escolas',
-        'Livros e Artigos',
+        'Conselho de Pós-Graduação - EQ',
+        'Reuniões Anteriores'
     ]
 
     arrayFolders = [
@@ -48,31 +44,20 @@ def main():
 
     if len(arrayPages)>0:
         print('\nStart Pages Generation ..')
-        if len(const.location)==0:
-            util.setAllPrivate(driver)
         for name in tqdm(arrayPages):
             createPage.createPage(driver, name)
 
     if len(arrayFolders)>0:
         print('\nStart Folder Generation ..')
-        if len(const.location)==0:
-            util.setAllPrivate(driver)
         for name in tqdm(arrayFolders):
             createFolder.createFolder(driver, name)
         
     #publicar itens
-    util.publish(driver)
+    #util.publish(driver)
 
-    if (len(arrayFolders)>15 or len(arrayPages)>15):
-        time.sleep(const.avg_time_wait*2.0)
-        access.logoutProcess(driver)
-        time.sleep(const.avg_time_wait*2.0)
-        driver.close()
-    else:
-        time.sleep(const.avg_time_wait*0.5)
-        access.logoutProcess(driver)
-        time.sleep(const.avg_time_wait*0.5)
-        driver.close()
+    access.logoutProcess(driver)
+    time.sleep(const.avg_time_wait*0.5)
+    driver.close()
 
     print('\nBot Finished ...')
 

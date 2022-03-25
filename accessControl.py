@@ -1,2 +1,2 @@
-login='xxx'
-password='xxx'
+login=''
+password=''
