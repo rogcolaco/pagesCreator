@@ -29,7 +29,7 @@ def waitLoad(driver, xpath):
         return False
 
 def save(driver):
-    scrollDown(driver)
+    driver.find_element_by_xpath('//*[@id="form-buttons-save"]').send_keys(Keys.NULL) 
     driver.find_element_by_xpath('//*[@id="form-buttons-save"]').click() 
 
 def publish(driver):

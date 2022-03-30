@@ -1,6 +1,6 @@
 baseUrl = 'https://web06dev4.ufscar.br/pt-br'
 
-location='/programa/conselho-de-pos-graduacao-eq'
+location='/processo-seletivo'
 
 avg_time_wait = 0.8
 

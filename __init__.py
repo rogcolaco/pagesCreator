@@ -30,8 +30,10 @@ def main():
     print('\nBot Start ....')
 
     arrayPages = [
-        'Conselho de Pós-Graduação - EQ',
-        'Reuniões Anteriores'
+        'Apresentação',
+        'Mestrado',
+        'Doutorado',
+        'Pós-Doutorado'
     ]
 
     arrayFolders = [
