@@ -30,14 +30,23 @@ def main():
     print('\nBot Start ....')
 
     arrayPages = [
-        'Apresentação',
-        'Mestrado',
-        'Doutorado',
-        'Pós-Doutorado'
+        'Apresentação ',
+        'Ingresso',
+        'Projeto Pedagógico',
+        'Matriz Curricular ',
+        'Ênfases',
+        'Regimento Geral',
+        'Organizações estudantis ',
+        'Avaliações',
+
     ]
 
     arrayFolders = [
-    ]   
+        # 'O Curso',
+        # 'Coordenação',
+        # 'Estudantes',
+        # 'Outras Informações'
+    ]
 
     driver = webdriver.Firefox()
 
@@ -47,12 +56,12 @@ def main():
     if len(arrayPages)>0:
         print('\nStart Pages Generation ..')
         for name in tqdm(arrayPages):
-            createPage.createPage(driver, name)
+            createPage.createPage(driver, name, const.has_trasnlation)
 
     if len(arrayFolders)>0:
         print('\nStart Folder Generation ..')
         for name in tqdm(arrayFolders):
-            createFolder.createFolder(driver, name)
+            createFolder.createFolder(driver, name, const.has_trasnlation)
         
     #publicar itens
     #util.publish(driver)

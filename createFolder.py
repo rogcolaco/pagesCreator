@@ -38,7 +38,7 @@ def configFolder (driver,folderName):
     driver.find_element_by_xpath('//*[@id="form-buttons-save"]').click()
 
 
-def createFolder(driver, folderName):
+def createFolder(driver, folderName, has_trasnlation ):
     driver.get(baseUrl)
     driver.get(baseUrl+'/++add++Folder')
     inputName = driver.find_element_by_xpath('//*[@id="form-widgets-IDublinCore-title"]')
@@ -46,4 +46,4 @@ def createFolder(driver, folderName):
     #save
     util.save(driver)
     configFolder(driver, folderName)
-    util.publish(driver)
+    util.publish(driver, 'is_folder', has_trasnlation)

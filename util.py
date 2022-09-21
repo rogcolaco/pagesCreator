@@ -32,8 +32,23 @@ def save(driver):
     driver.find_element_by_xpath('//*[@id="form-buttons-save"]').send_keys(Keys.NULL) 
     driver.find_element_by_xpath('//*[@id="form-buttons-save"]').click() 
 
-def publish(driver):
-    driver.find_element_by_xpath('//*[@id="plone-contentmenu-workflow"]/a').click() 
+def publish(driver, what_is, has_translation):
+    if has_translation:
+        if what_is=='is_page':
+            driver.find_element_by_xpath('/html/body/div[1]/div/nav/ul[1]/li[5]/a').click() 
+    
+        if what_is =='is_folder':
+            driver.find_element_by_xpath('/html/body/div[1]/div/nav/ul[1]/li[6]/a').click() 
+
+    else:
+        if what_is=='is_page':
+            driver.find_element_by_xpath('/html/body/div[1]/div/nav/ul[1]/li[4]/a').click() 
+
+        
+        if what_is =='is_folder':
+            driver.find_element_by_xpath('/html/body/div[1]/div/nav/ul[1]/li[5]/a').click() 
+
+    
     driver.find_element_by_xpath('//*[@id="workflow-transition-publish"]').click() 
 
 

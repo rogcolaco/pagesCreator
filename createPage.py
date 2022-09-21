@@ -28,7 +28,7 @@ def addTemplate(driver):
     time.sleep(const.avg_time_wait*0.5)
 
 
-def createPage(driver, pageName):
+def createPage(driver, pageName, has_trasnlation):
     driver.get(baseUrl)
     driver.get(baseUrl+'/++add++Document')
     inputName = driver.find_element_by_xpath('//*[@id="form-widgets-IDublinCore-title"]')
@@ -39,5 +39,5 @@ def createPage(driver, pageName):
 
     #save
     util.save(driver)
-    util.publish(driver)
+    util.publish(driver, 'is_page', has_trasnlation)
 
